@@ -15,8 +15,8 @@
 # 11
 # >>> prime(1)
 # 2
+
 import cProfile
-import functools
 
 
 def test(func):
@@ -89,42 +89,6 @@ def simple(n):
                     index = 0
 
         return result[n-1]
-
-
-# def simple_dict(n):
-#     dict = {1: 2}
-#
-#     def _simple_dict(n):
-#         if n in dict:
-#             return dict[n]
-#         else:
-#             keys = list(dict.keys())
-#             print(keys)
-#             print(keys[-1])
-#             last_index = keys[-1]
-#             last_value = dict[last_index]
-#             number_to_check = last_value + 1
-#             index = 0
-#             while len(dict) < n:
-#                 # print(f'loop: index = {index}, number check = {number_to_check}, {dict}')
-#                 if number_to_check % dict[keys[index]] == 0 and index < len(keys) - 1:
-#                     number_to_check += 1
-#                     index = 0
-#                 else:
-#                     index += 1
-#
-#                     if index >= len(keys):
-#                         dict[keys[index-1]+1] = number_to_check
-#                         # result.append(number_to_check)
-#                         number_to_check += 1
-#                         index = 0
-#                         keys = list(dict.keys())
-#
-#         return dict[n]
-#             # pass
-#
-#     return _simple_dict(n)
-
 
 # print(erastofens_sieve(100))
 
@@ -214,3 +178,4 @@ def simple(n):
 # 1    0.000    0.000    0.004    0.004 {built-in method builtins.exec}
 # 3    0.000    0.000    0.000    0.000 {built-in method builtins.len}
 # 1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+

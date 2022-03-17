@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bdae85-e780-4563-9919-cb1bdb2663e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson.py" beforeDir="false" afterPath="$PROJECT_DIR$/lesson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Python.lesson">
+  <component name="RunManager" selected="Python.task_2">
     <configuration name="les_3_hm5" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -171,8 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.lesson" />
         <item itemvalue="Python.task_2" />
+        <item itemvalue="Python.lesson" />
         <item itemvalue="Python.task_1" />
         <item itemvalue="Python.les_3_hm5" />
         <item itemvalue="Python.task_4" />
