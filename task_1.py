@@ -105,13 +105,13 @@ show_size(matrix)
 
 # fill matrix
 for i in range(size_rows):
-    sum = 0
+    summa = 0
     for j in range(size_columns):
         if j == size_columns - 1:
-            matrix[i][j] = sum
+            matrix[i][j] = summa
         else:
             matrix[i][j] = int(input(f'введите значение элемента a{i}{j}: '))
-            sum += matrix[i][j]
+            summa += matrix[i][j]
 
 show_size(matrix)
 
@@ -144,7 +144,6 @@ show_size(matrix)
 
 for item in matrix:
     print(item)
-
 
 matrix_tuple = []
 for item in matrix:
