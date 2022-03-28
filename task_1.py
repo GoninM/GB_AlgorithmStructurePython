@@ -50,7 +50,6 @@ size_columns = 5
 
 show_size(size_rows)
 show_size(size_columns)
-
 # type=<class 'int'>, size = 14, object=4
 # type=<class 'int'>, size = 14, object=5
 
