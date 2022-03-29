@@ -9,10 +9,38 @@ import random
 
 
 def find_mediana(array):
-    pass
+    min_value = array[0]
+    max_value = array[0]
+
+    for item in array:
+        if item < min_value:
+            min_value = item
+        if item > max_value:
+            max_value = item
+
+    mid = (max_value+min_value)//2
+    print(f'min = {min_value} max = {max_value} mid = {mid}')
+
+    counter = 0
+    mediana = 0
+
+    for item in array:
+        if item < mid:
+            counter += 1
+            if mediana < item:
+                mediana = item
+
+            print(f'{item} < {mid} counter = {counter} mediana = {mediana}')
+
+        if counter > len(array)//2:
+            if
+            mediana = item
+            break
+
+    print(f'counter = {counter} mediana = {mediana}')
 
 
-M = 3
+M = 2
 size = 2*M + 1
 
 LOW_LIMIT = 0
@@ -21,6 +49,6 @@ UP_LIMIT = 100
 test_array = [random.randint(LOW_LIMIT, UP_LIMIT) for _ in range(size)]
 
 print(test_array)
-
+find_mediana(test_array)
 
 
