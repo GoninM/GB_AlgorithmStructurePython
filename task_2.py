@@ -12,24 +12,6 @@ g = [
     [0, 0, 0, 0, 0, 1, 2, 0]
 ]
 
-'''
-
-допустим вершина 0. (start = 0)
-шаг 1:
-
-0-0 = 0
-0-1 = 0
-0-2 = 1
-0-3 = 1
-0-4 = 9
-0-5 = 0
-0-6 = 0
-0-7 = 0
-
-путь равен значение в узле + прошлый путь
-
-'''
-
 
 def deikstra(graf, start):
 
@@ -45,9 +27,6 @@ def deikstra(graf, start):
     p[start] = 0
     path[start] = str(start)
     min_cost = 0
-    p = str(start)
-    is_min_founded = False
-    # parent[start] = start
 
     while min_cost < float('inf'):
 
@@ -66,12 +45,15 @@ def deikstra(graf, start):
                 is_path_changed[i] = False
                 index = i
                 p = str(i)
+                # print(p)
                 while index > 0:
+                    # print(f'parent[{index}] = {parent[index]}')
                     prev_node = parent[index]
-                    p = f'{str(prev_node)} - ' + p
+                    if prev_node != -1:
+                        p = f'{str(prev_node)} -> ' + p
                     index = prev_node
                 path[i] = p
-
+                # print(f'path[{i}] = {path[i]}')
         min_cost = float('inf')
 
         for i in range(length):
@@ -82,11 +64,13 @@ def deikstra(graf, start):
     return cost, path
 
 
-s = int(input('От какой вершины идти: '))
-result = deikstra(g, s)
-print('Node : Cost : Path')
-print('-' * 30)
-for i, node in enumerate(result[0]):
-    print(f'{i: 4} : {result[0][i] : 4} : {result[1][i]}')
+# s = int(input('От какой вершины идти: '))
 
-# print(deikstra(g, 0))
+for s in range(len(g)):
+    result = deikstra(g, s)
+    print('-' * 15, f'вершина {s}', '-' * 15)
+    # print('-' * 15 )
+
+    for i, node in enumerate(result[0]):
+        # if i != s:
+        print(f'минимальное расстояние от вершиниы {s: 3} до вершины {i: 3} равно {result[0][i] : 4} и проходит через вершины: {result[1][i]}')
