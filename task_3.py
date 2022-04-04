@@ -3,53 +3,63 @@
 # Примечания:
 # a. граф должен храниться в виде списка смежности;
 # b. генерация графа выполняется в отдельной функции, которая принимает на вход число вершин.
+import random
+
 
 def make_graph(n):
-    g = {i: [] for i in range(n)}
+    g = {_: [] for _ in range(n)}
 
     for i in range(len(g)):
-        for j in range(len(g)):
-            if j != i:
-                g[i].append(j)
+        nums = list(range(n))
+        nums.remove(i)
+        # print(nums)
+        g[i] = [random.choice(nums) for _ in range(random.choice(range(n)))]
 
-    for k, v in g.items():
-        print(f'{k} : {v}')
-
-    return g
-
-
-def make_graph_2(n):
-    g = {i: [] for i in range(n)}
-
-    i = 0
-    while i < n:
-        j = 0
-        while j < n:
-            if j == i and j != n-1:
-                j += 1
-            else:
-                break
-
-            node = input(f'Введите {j} вершину для вершины {i}. для остановки пустая строка: ')
-            if not node:
-                break
-            elif int(node) == i:
-                print(f'номера вершин не должны совпадать')
-            else:
-                g[i].append(int(node))
-                j += 1
-
-        i += 1
-
-    for k, v in g.items():
-        print(f'{k} : {v}')
+    # for k, v in g.items():
+    #     print(f'{k} : {v}')
 
     return g
 
 
-def deep_search(graf):
-    pass
+def deep_search(graf, start, is_visited, res):
+    is_visited[start] = True
 
-n = int(input('введите кол-во узлов: '))
-make_graph_2(n)
+    for g in graf[start]:
+        if not is_visited[g]:
+            res.append(g)
+            deep_search(graf, g, is_visited, result)
 
+
+test_graf = {
+    0: [1, 3, 4],
+    1: [2, 5],
+    2: [1, 6],
+    3: [1, 5, 7],
+    4: [2, 6],
+    5: [6],
+    6: [5],
+    7: [6]
+}
+
+is_marked = [False] * (len(test_graf))
+
+for i in range(len(test_graf)):
+    is_marked = [False] * (len(test_graf))
+    result = []
+    deep_search(test_graf, i, is_marked, result)
+    print(f'вершина {i} путь: {result}')
+
+
+st = random.randint(7, 20)
+print(f'количество вершин: {st}')
+
+test_graf_2 = make_graph(st)
+print(f'Граф тестовый:')
+for k, v in test_graf_2.items():
+    print(f'{k} : {v}')
+
+for i in range(st):
+    is_marked = [False] * st
+    result = []
+    deep_search(test_graf_2, i, is_marked, result)
+    print(f'вершина {i} путь: {result}')
